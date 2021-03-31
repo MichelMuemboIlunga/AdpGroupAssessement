@@ -34,7 +34,7 @@ public class TriangleAreaTest {
     
     @BeforeEach
     public void setUp() {
-        System.out.println("setup");
+       System.out.println("setup");
         obj1 = obj2;
         obj3 = new TriangleArea();
     }
