@@ -20,6 +20,7 @@ import org.junit.jupiter.api.DisplayName;
 /**
  *
  * @author Lonwabo Mshudulu (215181689)
+ * This class tests the area of a rectangle class
  */
 public class RectangleAreaTest {
     

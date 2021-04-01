@@ -4,6 +4,7 @@ package za.ac.mycput.adpgroupassementproject;
 /**
  *
  * @author Lonwabo Mshudulu (215181689)
+ * This class calculates the area of a rectangle
  */
 public class RectangleArea {
     
