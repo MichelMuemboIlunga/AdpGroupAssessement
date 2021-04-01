@@ -47,7 +47,7 @@ public class RectangleAreaTest {
     @DisplayName ("Testing getResponse() equality")
     @Test
     public void testGetEquality() {
-        assertEquals("ADP is cool!", RectangleArea.getResponse());
+        assertEquals("ADP is cool! Java is Nice!", RectangleArea.getResponse());
     }
     
     // Testing RectangleArea() (test status: failed)
@@ -66,7 +66,7 @@ public class RectangleAreaTest {
     @DisplayName ("Testing object in the getResponse()")
     @Test
     public void testGetResponseIdentity() {
-        Assertions.assertSame("ADP is cool!", RectangleArea.getResponse());
+        Assertions.assertSame("ADP is cool! Java is Nice!", RectangleArea.getResponse());
     }
     
     // Testing Failing Test
