@@ -76,10 +76,6 @@ public class RectangleArea {
         return sideFour;
     }
     
-    public static String getResponse() {
-        return "ADP is cool!";
-    }
-    
     // calculate rectangle area
     public double rectangleArea() {
         return this.length * this.width;

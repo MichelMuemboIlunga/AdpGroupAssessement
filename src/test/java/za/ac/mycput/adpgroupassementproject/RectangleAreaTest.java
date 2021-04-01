@@ -5,17 +5,9 @@
  */
 package za.ac.mycput.adpgroupassementproject;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
 
 /**
  *
@@ -26,56 +18,26 @@ public class RectangleAreaTest {
     
     private RectangleArea obj1;
     private RectangleArea obj2;
-    private RectangleArea obj3;
-    
-    @BeforeEach
-    public void setUp() {
-        System.out.println("Setup");
-        obj1 = obj2;
-        obj3 = new RectangleArea();
-    }
     
     // Testing Object Equality (test status: passed)
     
-    @DisplayName ("Testing object equality")
     @Test
     public void testObjectEquality() {
         assertEquals(obj1, obj2);
     }
     
-    // Testing getResponse Equality (test status: passed)
+    // Testing Object Identity (test status: passed)
     
-    @DisplayName ("Testing getResponse() equality")
     @Test
-    public void testGetEquality() {
-        assertEquals("ADP is cool!", RectangleArea.getResponse());
-    }
-    
-    // Testing RectangleArea() (test status: failed)
-    
-    @DisplayName("Testing ReactangleArea() Inequality")
-    @Test
-    public void testRectangleArea(){
-        /* this test will fail because the expected result is 12.0 but because we are testing
-          the inequality it will be false instead of true */
-        System.out.println("The test should fail.");
-        assertNotEquals(30.0, 5 * 5);
-    }
-    
-    // Testing Object Identity on the getResponse() (test status: passed)
-    
-    @DisplayName ("Testing object in the getResponse()")
-    @Test
-    public void testGetResponseIdentity() {
-        Assertions.assertSame("ADP is cool!", RectangleArea.getResponse());
+    public void testObjectIdentity() {
+        assertSame(obj1, obj2);
     }
     
     // Testing Failing Test
     
-    @DisplayName("Testing Failing Test in calculateSides()")
     @Test
     void testCalculateSideFailing(){
-        Assertions.assertEquals(100, 35 + 25 + 25 + 15 , "correct");
+        assertEquals(100, 35 + 25 + 25 + 15 , "correct");
         // make the test fail
         fail("Sorry You Have to fail for the purpose of testing this method");
     }
@@ -83,29 +45,22 @@ public class RectangleAreaTest {
     // Testing timeout (test status: passed)
     
     @Test
-    public void testTimeOut() {
-        assertTimeout(Duration.ofSeconds(10), () -> testSecondTimeout(5));
+    public void testTimeOutOne() throws InterruptedException {
+        Thread.sleep(30);
+        System.out.println("First time test method");
     }
     
-    //method to test timeout
-    public void testSecondTimeout(int second) {
-        try {
-            TimeUnit.SECONDS.sleep(second);
-        } catch (InterruptedException e) {
-        }
+    public void testTimeOutTwo() throws InterruptedException {
+        Thread.sleep(50);
+        System.out.println("Second time test method");
     }
     
     // Testing disabling
     
-    @Disabled ("Disable this method until the debug is complete")
+    @Disabled
     @Test
-    public void disabling() {
-        Assertions.assertNotNull(this.obj3, "This object is not null");
-    }
-    
-    @AfterEach
-    public void tearDown() {
-        System.out.println("teardown");
+    public void testWillBeSkipped() {
+        System.out.println("This method will be skipped");
     }
 
     @Test
