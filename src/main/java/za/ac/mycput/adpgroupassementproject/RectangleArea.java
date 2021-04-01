@@ -76,7 +76,7 @@ public class RectangleArea {
     }
     
     public static String getResponse() {
-        return "ADP is cool!";
+        return "ADP is cool! Java is Nice!";
     }
     
     // calculate rectangle area
